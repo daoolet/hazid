@@ -1,0 +1,14 @@
+{% extends "app_hazid/base.html" %}
+
+{% block title %}Stats{% endblock %}
+
+
+{% block content %}
+    {% if observed_counts %}
+        {% for i in observed_counts %}
+            <li>{{ i.i_observed }} - {{ i.count }}</li>
+        {% endfor %}
+    {% else %}
+        <h4>No Stats</h4>
+    {% endif %}
+{% endblock %}

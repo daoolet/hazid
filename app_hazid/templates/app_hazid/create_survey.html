@@ -1,0 +1,127 @@
+{% extends "app_hazid/base.html" %}
+
+{% block title %} Create a HAZID Card {% endblock %}
+
+
+{% block content %}
+        <div class="container" id="form-group-create">
+            <div class="row">
+              <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12">
+                <form method="post">
+                  {% csrf_token %}
+                  {{form.errors}}
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Short name of your card">
+                  </div>
+                  <div class="form-group">
+                    <label for="date">When did it happen?</label>
+                    <input type="date" class="form-control" id="date" name="date" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="time">At what time did this happen?</label>
+                    <input type="time" class="form-control" id="time" name="time" >
+                  </div>
+                  <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="Where did it happen?">
+                  </div>
+                  <div class="form-group">
+                    <label for="company">Company Observed</label>
+                    <input type="text" class="form-control" id="company_observed" name="company_observed" placeholder="Company Observed">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="activity_observed">Activity Observed</label>
+                    <select class="form-control" id="{{ form.activity_observed.id_for_label }}" name="{{ form.activity_observed.name }}">
+                      {% for value, label in form.activity_observed.field.choices %}
+                          <option value="{{ value }}" {% if value == form.activity_observed.value %}selected{% endif %}>{{ label }}</option>
+                      {% endfor %}
+                  </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="i_observed">I Observed</label>
+                    <select class="form-control" id="{{ form.i_observed.id_for_label }}" name="{{ form.i_observed.name }}">
+                      {% for value, label in form.i_observed.field.choices %}
+                          <option value="{{ value }}" {% if value == form.i_observed.value %}selected{% endif %}>{{ label }}</option>
+                      {% endfor %}
+                  </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="possible_consequences">Possible Consequences</label>
+                      {% for value, label in form.possible_consequences.field.choices %}
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="{{ value }}" id="{{ value }}" name="{{ form.possible_consequences.name }}"{% if value in form.possible_consequences.value %} checked{% endif %}>
+                          <label class="form-check-label" for="{{ value }}">{{ label }}</label>
+                      </div>
+                      {% endfor %}
+                  </div>
+                  
+                  <div class="form-group conditions_related">
+                    <label for="conditions_related">
+                      <a href="#conditionsCollapse" data-toggle="collapse">Conditions/Act related to</a>
+                    </label>
+                    <div class="collapse" id="conditionsCollapse">
+                        {% for value, label in form.conditions_related.field.choices %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="{{ value }}" id="{{ value }}" name="{{ form.conditions_related.name }}"{% if value in form.conditions_related.value %} checked{% endif %}>
+                            <label class="form-check-label" for="{{ value }}">{{ label }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                  <!-- <div class="form-group">
+                    <label for="conditions_related">Conditions/Act related to</label>
+                      {% for value, label in form.conditions_related.field.choices %}
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="{{ value }}" id="{{ value }}" name="{{ form.conditions_related.name }}"{% if value in form.conditions_related.value %} checked{% endif %}>
+                          <label class="form-check-label" for="{{ value }}">{{ label }}</label>
+                      </div>
+                      {% endfor %}
+                  </div> -->
+
+                  <div class="form-group description">
+                    <label for="description" id="description">Describe your observation:</label>
+                    <textarea class="form-control no-resize" id="description" name="description" rows="4" placeholder="(maximum 300 characters)"></textarea>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="swa_applied" id="swa_applied">
+                    <label class="form-check-label" for="swa_applied">Has SWA been applied?</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="corrective_measures" id="corrective_measures">
+                    <label class="form-check-label" for="corrective_measures">Have the corrective measures been taken?</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="further_action" id="further_action">
+                    <label class="form-check-label" for="further_action">Further action required?</label>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="corrective_action">Corrective actions taken/recommended:</label>
+                    <textarea class="form-control no-resize" id="corrective_action" name="corrective_action" rows="3"  placeholder="(maximum 150 characters)"></textarea>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="reported" id="reported">
+                    <label class="form-check-label" for="reported">Did you report this to a foreman/supervisor or HES representative?</label>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="if_reported">If yes, who and when</label>
+                    <input type="text" class="form-control" id="if_reported" name="if_reported" placeholder="(maximum 100 characters)">
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit Card</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+{% endblock %}

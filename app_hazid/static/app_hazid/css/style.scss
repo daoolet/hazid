@@ -1,0 +1,117 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+}
+
+// index.html
+.navbar {
+    background-color: rgb(35, 57, 69);
+
+    .nav-link, .btn.btn-outline-primary  {
+        color: white;
+    }
+
+    .btn.btn-danger {
+        background-color: rgb(173, 8, 18);
+    }
+
+    .nav-item {
+        margin-right: 15px;
+    }
+
+    a {
+        font-size: 20px;
+
+        .nav-link {
+            transition: color 0.5s ease;
+        }
+    }
+    
+    a.nav-link:hover {
+        color: red;
+    }
+}
+
+.card {
+    .card-header {
+        background-color: rgb(100, 192, 200);
+    }
+}
+
+// REGISTER & LOGIN & PROFILE
+#form-group-register, #form-group-login {
+    margin-top: 15px;
+    
+    label {
+        margin-bottom: 10px;
+    
+    }
+
+    input {
+        width: 400px;
+    }
+}
+
+// create_survey.html
+#form-group-create {
+
+    label {
+        font-weight: bold;
+    }
+
+    .form-group {
+        padding-top: 15px;
+
+        label {
+            padding-bottom: 5px;
+        }
+    
+        .form-control {
+            width: 500px;
+        }
+    }
+
+
+    .form-check {
+        padding-top: 10px;
+
+        label {
+            padding-bottom: 5px;
+            font-weight: 400;
+        }
+
+        .form-check-input {
+            width: 20px;
+        }
+    }
+}
+
+// detail.html
+#detail {
+
+    h5 {
+        font-weight: 700;
+    }
+    
+    .row {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .row:nth-child(odd) {
+        background-color: #93D0FF;
+    }
+
+    #description {
+        overflow-y: auto;
+    }
+
+}
+
+// PROFILE
+#form-group-add-allowed-user {
+    input {
+        width: 400px;
+    }
+}

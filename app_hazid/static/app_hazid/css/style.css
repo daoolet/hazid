@@ -1,0 +1,82 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+.navbar {
+  background-color: rgb(35, 57, 69);
+}
+.navbar .nav-link, .navbar .btn.btn-outline-primary {
+  color: white;
+}
+.navbar .btn.btn-danger {
+  background-color: rgb(173, 8, 18);
+}
+.navbar .nav-item {
+  margin-right: 15px;
+}
+.navbar a {
+  font-size: 20px;
+}
+.navbar a .nav-link {
+  transition: color 0.5s ease;
+}
+.navbar a.nav-link:hover {
+  color: red;
+}
+
+.card .card-header {
+  background-color: rgb(100, 192, 200);
+}
+
+#form-group-register, #form-group-login {
+  margin-top: 15px;
+}
+#form-group-register label, #form-group-login label {
+  margin-bottom: 10px;
+}
+#form-group-register input, #form-group-login input {
+  width: 400px;
+}
+
+#form-group-create label {
+  font-weight: bold;
+}
+#form-group-create .form-group {
+  padding-top: 15px;
+}
+#form-group-create .form-group label {
+  padding-bottom: 5px;
+}
+#form-group-create .form-group .form-control {
+  width: 500px;
+}
+#form-group-create .form-check {
+  padding-top: 10px;
+}
+#form-group-create .form-check label {
+  padding-bottom: 5px;
+  font-weight: 400;
+}
+#form-group-create .form-check .form-check-input {
+  width: 20px;
+}
+
+#detail h5 {
+  font-weight: 700;
+}
+#detail .row {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+#detail .row:nth-child(odd) {
+  background-color: #93D0FF;
+}
+#detail #description {
+  overflow-y: auto;
+}
+
+#form-group-add-allowed-user input {
+  width: 400px;
+}/*# sourceMappingURL=style.css.map */

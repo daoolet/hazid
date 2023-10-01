@@ -1,0 +1,52 @@
+{% extends "app_hazid/base.html" %}
+
+{% block title %} Hazids {% endblock %}
+
+
+{% block content %}
+    <div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            </ul>
+        </nav>
+    </div>
+    {% for survey in surveys %}
+        <div class="card mb-3">
+
+            <div class="card-header">Author:
+                <strong>
+                    {{ survey.author.email }}
+                </strong>
+            </div>
+
+            <div class="card-body d-flex flex-row justify-content-between">
+                <div>
+                    <h5 class="card-title">
+                        <a href="{% url 'read_survey' survey.id %}">{{ survey.title }}</a>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="card-footer text-muted">
+                Created at: {{survey.created_at}}
+            </div>
+        </div>
+
+    {% empty %}
+        <h4>No cards</h4>
+    {% endfor %}
+
+{% endblock %}

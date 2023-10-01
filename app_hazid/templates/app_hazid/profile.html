@@ -1,0 +1,33 @@
+{% extends "app_hazid/base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+
+{% block content %}
+
+    <!-- {{ current_user_id }}
+    {% if surveys %}
+        {{ surveys }}
+        {% else %}
+        Nothing
+    {% endif %} -->
+
+    {% if perms.app_users.add_alloweduser %}
+        <form method="post">
+            {% csrf_token %}
+            <div id="form-group-add-allowed-user">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input name="email" type="email" class="form-control custom-email-input" id="email">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary mb-2">Add</button>
+                </div>
+            </div>
+        </form>
+    {% else %}
+        <h3>no perms</h3>
+    {% endif %}
+
+    <a href="{% url 'password_change' %}">Password change</a>
+{% endblock %}

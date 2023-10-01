@@ -1,0 +1,153 @@
+{% extends "app_hazid/base.html" %}
+
+{% block title %}Card details{% endblock %}
+
+
+{% block content %}
+<div class="container" id="detail">
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Title</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.title}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Date</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.date}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Time</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.time}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Location</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.location}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Company observed</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.company_observed}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Activity observed</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.activity_observed}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>I observed</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.i_observed}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Possible consequences</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.possible_consequences}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Conditions/Act related to</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.conditions_related}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Description</h5>
+        </div>
+        <div class="col-md-8 col-12"  id="description">
+            <p >{{survey.description}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Has SWA been applied?</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.swa_applied}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Have the corrective measures been taken?</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.corrective_measures}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Further action required?</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.further_action}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Corrective actions taken/recommended:</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.corrective_action}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>Did you report?</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.reported}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h5>If yes, who and when</h5>
+        </div>
+        <div class="col-md-8 col-12">
+            <p >{{survey.if_reported}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
