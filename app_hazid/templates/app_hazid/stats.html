@@ -11,4 +11,11 @@
     {% else %}
         <h4>No Stats</h4>
     {% endif %}
+
+    <li>Team size - {{ team_size }}</li>
+    <li>Card Submitted - {{ card_submitted }}</li>
+    <li style="color: red;">Target Achieved - {{ target_achieved }}%</li>
+    <li>No. of Individuals who Participated - {{ individuals.count }}</li>
+    <li style="color: red;">Individuals Participating - {{ individuals_percentage }}%</li>
+
 {% endblock %}

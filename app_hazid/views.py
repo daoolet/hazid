@@ -133,10 +133,21 @@ def profile_view(request):
 
 
 def stats(request):
+    team_size = AllowedUser.objects.count()
+    card_submitted = Survey.objects.count()
+    individuals = Survey.objects.values("author_id").annotate(count=Count("author_id"))
     observed_counts = Survey.objects.values("i_observed").annotate(count=Count("i_observed"))
+
+    target_achieved = round(card_submitted * 100 / team_size)
+    individuals_percentage = round(individuals.count() * 100 / team_size)
 
     context = {
         "observed_counts": observed_counts,
+        "card_submitted": card_submitted,
+        "individuals": individuals,
+        "team_size": team_size,
+        "target_achieved": target_achieved,
+        "individuals_percentage": individuals_percentage,
     }
     return render(request, "app_hazid/stats.html", context)
 
